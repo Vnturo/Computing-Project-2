@@ -1,0 +1,95 @@
+1. Required Software
+Before running the app, install the following:
+
+✅ Install These Programs
+Node.js (LTS Version)  https://nodejs.org/en
+
+Check if it's installed in cmd:
+node -v
+
+Expo CLI  https://expo.dev/go
+Install globally:
+
+npm install -g expo-cli
+
+Android Studio  https://developer.android.com/studio
+Required for Android Emulator.
+
+Open Android Studio → Tools > AVD Manager → Create Virtual Device (Recommended: Pixel 6 API 30+).
+Xcode (Mac Only)
+
+Required for iOS Simulator.
+Install CLI tools:
+sudo xcode-select --install
+[Expo Go App (For Testing on Physical Devices)]
+
+2. Set Up the Project in your computer by doing the code 
+
+npx create-expo-app GoldsmithsApp
+
+cd GoldsmithsApp
+Install Dependencies
+npm install
+If you get errors, try:
+
+rm -rf node_modules package-lock.json
+npm install
+
+now download the files i have uploaded to github and put them in the file you just created
+
+
+3. Run the App
+Run on Physical Device (Expo)
+Start the Expo dev server:
+
+npx expo start
+Scan the QR Code with the Expo Go app on your phone.
+Run on Android Emulator
+Open Android Studio.
+Start an Android Emulator (AVD Manager > Start Emulator).
+Run:
+
+npx expo run:android
+
+Run on iOS Simulator (Mac Only)
+Open Xcode.
+Open the iOS Simulator (Window > Devices & Simulators).
+Run:
+
+npx expo run:ios
+4. Troubleshooting
+Fix: Metro Bundler Not Running
+
+npx expo start -c
+Fix: Android Emulator Not Detected
+
+adb devices
+If no devices are listed, restart Android Studio.
+
+Fix: iOS Simulator Not Working (Mac Only)
+
+sudo xcode-select --reset
+npx expo run:ios
+5. Project Folder Structure
+
+GoldsmithsApp/
+│── assets/               # Images & static assets
+│── src/                  # Source code
+│   ├── components/       # UI components
+│   ├── screens/          # App screens
+│   ├── navigation/       # Navigation logic
+│   ├── context/          # Global state management
+│   ├── styles/           # Global styles
+│── App.js                # Entry point of the app
+│── package.json          # Project dependencies
+│── app.json              # Expo project configuration
+│── metro.config.js       # Metro bundler config
+│── README.md             # This file
+
+
+6. Final Notes
+Make sure Android Studio, Node.js, and Expo CLI are installed before running the app.
+If something doesn’t work, run npx expo start -c to clear cache.
+To update dependencies, run:
+
+npm update
