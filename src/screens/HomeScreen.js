@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, StyleSheet, FlatList } from 'react-native';
+import { View, StyleSheet, FlatList, Dimensions } from 'react-native';
 import GridItem from '../components/GridItem';
 
 const HomeScreen = ({ navigation }) => {
@@ -17,16 +17,22 @@ const HomeScreen = ({ navigation }) => {
     { image: require('../../assets/Wellbeing.png'), screen: 'WebView', url: 'https://www.gold.ac.uk/students/wellbeing/wellbeing-service/' },
   ];
 
+  const { width } = Dimensions.get('window');//Get screen width
+  const itemWidth = (width / 2) - 30; //Dynamic width for better spacing
+
   return (
     <View style={styles.container}>
       <FlatList
         data={menuItems}
         numColumns={3}
         keyExtractor={(item) => item.title}
+        columnWrapperStyle={styles.columnWrapper}
+        contentContainerStyle={styles.gridContainer}
         renderItem={({ item }) => (
           <GridItem 
             title={item.title} 
-            image={item.image} 
+            image={item.image}
+            style={{ width: itemWidth }}
             onPress={() => {
               if (item.url) {
                 navigation.navigate(item.screen, { url: item.url });
@@ -44,10 +50,16 @@ const HomeScreen = ({ navigation }) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
     backgroundColor: '#257f66',
     paddingTop: 50,
+  },
+  gridContainer: {
+    paddingHorizontal: 10,
+    paddingVertical: 10,
+  },
+  columnWrapper: {
+    justifyContent: 'space-between',
+    marginBottom: 15,
   },
 });
 
