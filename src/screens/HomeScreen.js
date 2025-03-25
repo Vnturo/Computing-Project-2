@@ -11,7 +11,7 @@ const HomeScreen = ({ navigation }) => {
     { image: require('../../assets/StudentEssentials.png'), screen: 'WebView', url: 'https://student.gold.ac.uk' },
     { image: require('../../assets/Timetable.png'), screen: 'WebView', url: 'https://www.gold.ac.uk/students/timetable/' },
     { image: require('../../assets/Careers.png'), screen: 'WebView', url: 'https://www.gold.ac.uk/careers/' },
-    { image: require('../../assets/Email.png'), screen: 'WebView', url: 'https://email.gold.ac.uk' },
+    { image: require('../../assets/Email.png'), screen: 'EmailScreen'},
     { image: require('../../assets/Food.png'), screen: 'WebView', url: 'https://food.gold.ac.uk' },
     { image: require('../../assets/Travel.png'), screen: 'WebView', url: 'https://transport.gold.ac.uk' },
     { image: require('../../assets/Wellbeing.png'), screen: 'WebView', url: 'https://www.gold.ac.uk/students/wellbeing/wellbeing-service/' },
